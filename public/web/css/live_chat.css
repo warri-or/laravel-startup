@@ -1,0 +1,75 @@
+/* this should remove after */
+.wrapper{
+    width: 700px;
+    height: 450px;
+    border-radius: 7px;
+    margin: 50px auto 0;
+    /*background: url('https://images.unsplash.com/photo-1621336831096-0ef225705c56?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80') center/cover no-repeat;*/
+    position: relative;
+}
+
+/* necessary css */
+
+/* color variables */
+:root {
+    --overlay-color: #000;
+    --overlay-opacity: 0;
+    --chat-message-color: rgb(112, 112, 221);
+}
+
+.chitchats{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 0px !important;
+    overflow-y: auto;
+}
+
+.dark_overlay::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    opacity: var(--overlay-opacity);
+    background: var(--overlay-color);
+}
+
+.chat{
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 5px;
+}
+.chat_avatar{
+    width: 27px !important;
+    height: 27px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+}
+.chat-message{
+    font-size: 15px;
+    margin-top: 1px;
+    padding: 4px 5px;
+    color: #fff;
+    border-radius: 4px;
+    background-color: var(--chat-message-color);
+}
+.chat-image{
+    overflow: hidden;
+    border-radius: 10px;
+}
+.chat-time{
+    margin-top: 4px;
+    font-size: 12px;
+    color: #fff;
+    text-shadow: #000;
+}
