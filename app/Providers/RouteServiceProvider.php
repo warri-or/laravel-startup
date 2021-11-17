@@ -68,6 +68,10 @@ class RouteServiceProvider extends ServiceProvider
                  ->group(base_path('routes/modules/notification_and_messaging.php'));
 
             Route::middleware(['web','auth','auth_permission','language','module_permission:'.MODULE_USER_ADMIN,'role_permission'])
+                ->namespace($this->namespace_modules)
+                ->group(base_path('routes/modules/single_or_group_chat.php'));
+
+            Route::middleware(['web','auth','auth_permission','language','module_permission:'.MODULE_USER_ADMIN,'role_permission'])
                  ->namespace($this->namespace_modules)
                  ->group(base_path('routes/modules/payment.php'));
         });

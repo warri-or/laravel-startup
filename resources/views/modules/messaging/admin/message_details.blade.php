@@ -49,10 +49,12 @@
 </div>
 <script>
     $(document).ready(function (){
-        const channel_name = 'user_message_{{$message->id}}';
-        const event_name = 'user_messaging';
-        getUserMessage(channel_name,event_name);
-
+        var message_id = '{{$message->id ?? false}}';
+        if(message_id){
+            const channel_name = 'user_message_'+message_id;
+            const event_name = 'user_messaging';
+            getUserMessage(channel_name,event_name);
+        }
         let count = parseInt("{{$count ?? 0}}");
         $("#conversationListId").scrollTop($("#conversationListId")[0].scrollHeight);
         $('#conversationListId').scroll(function(){

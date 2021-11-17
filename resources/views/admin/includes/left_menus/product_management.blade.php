@@ -5,6 +5,7 @@
         {!! menuLiAppend('categories', 'Categories', 'fa fa-box', $sub_menu, '') !!}
         {!! menuLiAppend('brands', __('Brands'), 'fas fa-store', $sub_menu, 'brands') !!}
         {!! menuLiAppend('messaging', __('Messaging'), 'fa fa-envelope', $sub_menu, 'messaging') !!}
+        {!! menuLiAppend('messagingSog', __('Single or Group Chat'), 'fa fa-envelope', $sub_menu, 'messagingSog') !!}
     </ul>
 @endif
 

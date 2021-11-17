@@ -230,12 +230,14 @@
                 disableStats: true
             });
             Echo.channel('test-notification-channel').listen('.test-notification-event', (response) => {
+                console.log('socket response');
                 console.log(response);
             });
 
             $(document).click('hello',function (){
                 var url = '{{route('helloGet')}}';
                 makeAjaxText(url).done(function (response){
+                    console.log('request response');
                     console.log(response);
                 });
             });
